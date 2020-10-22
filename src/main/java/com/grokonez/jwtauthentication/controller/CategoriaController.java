@@ -1,4 +1,5 @@
 package com.grokonez.jwtauthentication.controller;
+import java.util.List;
 
 import com.grokonez.jwtauthentication.model.Categoria;
 import com.grokonez.jwtauthentication.repository.CategoriaRepository;
@@ -19,8 +20,8 @@ public class CategoriaController {
     private CategoriaRepository categoriaRepository;
 
     @GetMapping("/categorias")
-    public Page<Categoria> getCategorias(Pageable pageable) {
-        return categoriaRepository.findAll(pageable);
+    public List<Categoria> getCategorias() {
+        return categoriaRepository.findAll();
     }
   
     
